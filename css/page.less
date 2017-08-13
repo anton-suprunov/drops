@@ -1,23 +1,11 @@
 // mobile first layout
 .content {
-  height: 355px;
-  position: absolute;
-  top: 45%;
-  left: 0;
-  right: 0;
-  margin-top: -175px;
+  margin-top: 91px
 }
 
 .logo {
   display: block;
-  //margin: 141px auto 0;
   margin: 0 auto;
-}
-
-.logo,
-.logo__img {
-  width: 158px;
-  height: 111px;
 }
 
 .logo__img {
@@ -25,29 +13,7 @@
   .bounce();
 }
 
-.drops {
-  margin: 0 auto;
-  color: #000;
-  padding-top: 0;
-  font-size: 46px;
-  text-align: center;
-  font-weight: 600;
-
-  .animated(70px, 600ms);
-}
-
-.slogan {
-  color: #000;
-  font-size: 24px;
-  font-weight: 600;
-  margin: 38px auto 0;
-  text-align: center;
-
-  .animated(70px, 600ms);
-}
-
 .download {
-  background-image: url(../img/download-mobile.png);
   width: 179px;
   height: 53px;
   background-size: 179px 53px;
@@ -57,8 +23,6 @@
   overflow: hidden;
 
   .animated(70px, 600ms);
-  .image-2x('../img/download@2x.png', 179px, 53px);
-  .image-3x('../img/download@3x.png', 179px, 53px);
 }
 
 .footer {
@@ -106,30 +70,25 @@
 // tablet layout
 @media screen and (min-width: 768px) and (max-width: 1280px) {
   .content {
-    height: 480px;
-    margin-top: -240px;
+    //height: 480px;
+    //margin-top: -240px;
   }
-  .logo,
+  /*.logo,
   .logo__img {
     width: 214px;
     height: 151px;
-  }
+  }*/
 
-  .drops {
-    font-size: 62px;
-  }
 
-  .slogan {
-    font-size: 33px;
-  }
-  
-  .download {
-    background-image: url("../img/download-tablet.png");
+  /*.download {
+    position: fixed;
+    bottom: 0;
+    left: 0;
     width: 251px;
     height: 75px;
     background-size: 251px 75px;
     margin-top: 80px;
-  }
+  }*/
 
 
   .footer { height: 64px; }
@@ -144,45 +103,77 @@
   }
 }
 
+.overlay-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(../img/bg-pattern.png);
+  background-repeat: repeat;
+  z-index: -1;
+}
+
 // desktop layout
 @media screen and (min-width: 1280px) {
   .content {
-    height: 252px;
-    margin-top: -125px;
+    //height: 252px;
+    //margin-top: -125px;
   }
 
   .desktop-wrapper {
-    width: 448px;
-    margin: 0 auto;
+    //width: 448px;
+    //margin: 0 auto;
   }
+  
   .logo {
-    margin-top: 0;
-    float: left;
+    //max-height: 50%;
+    //max-width:75%;
+    //width: auto;
+    width: 375px;
+    height: 687px;
+    position: relative;
   }
-  .logo,
   .logo__img {
-    width: 187px;
-    height: 132px;
-  }
-
-  .drops {
-    float: right;
-    font-size: 93px;
-    line-height: 80px;
-  }
-
-  .slogan {
-    float: right;
-    margin-top: 18px;
-    font-size: 32px;
+    //width: 750px;
+    //height: 1334px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
   }
 
   .download {
-    background-image: url(../img/download-dekstop.png);
-    width: 235px;
+    width: 100%;
     height: 70px;
     background-size: 235px 70px;
-    margin-top: 40px;
+    height: 60px;
+    background-color: #1a1a1a;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    span {
+      display: block;
+      margin: 0 auto;
+      width: 222px;
+      height: 60px;
+      background-image: url(../img/download-now.svg);
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+
+      &:before {
+        content: "";
+        background-image: url(../img/apple.svg);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        width: 19px;
+        height: 17px;
+      }
+    }
   }
 
   .footer__nav {

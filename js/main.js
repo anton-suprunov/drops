@@ -1,24 +1,21 @@
 function main() {
-    var elements = ['.drops', '.slogan', '.download'],
-        logo = document.querySelector('.logo__img');
+    var logo = document.querySelector('.logo__img');
 
     setTimeout(function() {
-        animate('.drops');
+        //animate('.drops');
         logo.className = logo.className + ' bounce-in';
 
-        setTimeout(function() {
-            animate('.slogan');
+        //setTimeout(function() {
+            animate('.nav');
 
             setTimeout(function() {
-                animate('.download');
+                //animate('.slogan');
 
-                setTimeout(function() {
-                    animate('.footer__nav');
-                }, 120);
-
+                //setTimeout(function() {
+                animate('.download');                
+                //}, 120);
             }, 120);
-
-        }, 120);
+        //}, 120);
 
     }, 0);
 }

@@ -1,0 +1,35 @@
+.nav {
+  width: 100%;
+  position: absolute;
+  top: 68px;
+  right: 30px;
+  .animated(40px, 600ms)
+}
+
+.nav__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav__li {
+  padding: 0 10px;
+
+  &:first-child { padding-left: 10px; }
+  &:last-child { padding-right: 10px; }
+}
+
+.nav__link {
+  text-align: center;
+  display: block;
+  white-space: nowrap;
+  line-height: 24px;
+  color: #000;
+  text-decoration: none;
+  height: 24px;
+  font-size: 18px;
+  font-weight: 600;
+}

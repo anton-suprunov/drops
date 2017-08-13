@@ -427,7 +427,7 @@ body {
   min-height: 100%;
   font-family: "Nunito", Helvetica, Arial;
   font-weight: 600;
-  background-color: #97fd00;
+  background-color: #99ff00;
 }
 body.inner-page {
   background-color: #fff;
@@ -443,22 +443,53 @@ body.inner-page {
     left: 0;
   }
 }*/
-.content {
-  height: 355px;
+.nav {
+  width: 100%;
   position: absolute;
-  top: 45%;
-  left: 0;
-  right: 0;
-  margin-top: -175px;
+  top: 68px;
+  right: 30px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 600ms ease;
+}
+.nav.animated_in {
+  transform: translateY(0);
+  opacity: 1;
+}
+.nav__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.nav__li {
+  padding: 0 10px;
+}
+.nav__li:first-child {
+  padding-left: 10px;
+}
+.nav__li:last-child {
+  padding-right: 10px;
+}
+.nav__link {
+  text-align: center;
+  display: block;
+  white-space: nowrap;
+  line-height: 24px;
+  color: #000;
+  text-decoration: none;
+  height: 24px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.content {
+  margin-top: 91px;
 }
 .logo {
   display: block;
   margin: 0 auto;
-}
-.logo,
-.logo__img {
-  width: 158px;
-  height: 111px;
 }
 .logo__img {
   outline: none !important;
@@ -535,37 +566,7 @@ body.inner-page {
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
 }
-.drops {
-  margin: 0 auto;
-  color: #000;
-  padding-top: 0;
-  font-size: 46px;
-  text-align: center;
-  font-weight: 600;
-  opacity: 0;
-  transform: translateY(70px);
-  transition: all 600ms ease;
-}
-.drops.animated_in {
-  transform: translateY(0);
-  opacity: 1;
-}
-.slogan {
-  color: #000;
-  font-size: 24px;
-  font-weight: 600;
-  margin: 38px auto 0;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(70px);
-  transition: all 600ms ease;
-}
-.slogan.animated_in {
-  transform: translateY(0);
-  opacity: 1;
-}
 .download {
-  background-image: url(../img/download-mobile.png);
   width: 179px;
   height: 53px;
   background-size: 179px 53px;
@@ -580,20 +581,6 @@ body.inner-page {
 .download.animated_in {
   transform: translateY(0);
   opacity: 1;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .download {
-    /* on retina, use image that's scaled by 2 */
-    background-image: url("../img/download@2x.png") !important;
-    background-size: 179px 53px;
-  }
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min--moz-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3/1), only screen and (min-device-pixel-ratio: 3), only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx) {
-  .download {
-    /* on retina, use image that's scaled by 2 */
-    background-image: url("../img/download@3x.png") !important;
-    background-size: 179px 53px;
-  }
 }
 .footer {
   position: fixed;
@@ -641,28 +628,20 @@ body.inner-page {
   text-decoration: none;
 }
 @media screen and (min-width: 768px) and (max-width: 1280px) {
-  .content {
-    height: 480px;
-    margin-top: -240px;
-  }
-  .logo,
+  /*.logo,
   .logo__img {
     width: 214px;
     height: 151px;
-  }
-  .drops {
-    font-size: 62px;
-  }
-  .slogan {
-    font-size: 33px;
-  }
-  .download {
-    background-image: url("../img/download-tablet.png");
+  }*/
+  /*.download {
+    position: fixed;
+    bottom: 0;
+    left: 0;
     width: 251px;
     height: 75px;
     background-size: 251px 75px;
     margin-top: 80px;
-  }
+  }*/
   .footer {
     height: 64px;
   }
@@ -675,40 +654,57 @@ body.inner-page {
     margin: 0 auto;
   }
 }
+.overlay-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(../img/bg-pattern.png);
+  background-repeat: repeat;
+  z-index: -1;
+}
 @media screen and (min-width: 1280px) {
-  .content {
-    height: 252px;
-    margin-top: -125px;
-  }
-  .desktop-wrapper {
-    width: 448px;
-    margin: 0 auto;
-  }
   .logo {
-    margin-top: 0;
-    float: left;
+    width: 375px;
+    height: 687px;
+    position: relative;
   }
-  .logo,
   .logo__img {
-    width: 187px;
-    height: 132px;
-  }
-  .drops {
-    float: right;
-    font-size: 93px;
-    line-height: 80px;
-  }
-  .slogan {
-    float: right;
-    margin-top: 18px;
-    font-size: 32px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
   }
   .download {
-    background-image: url(../img/download-dekstop.png);
-    width: 235px;
+    width: 100%;
     height: 70px;
     background-size: 235px 70px;
-    margin-top: 40px;
+    height: 60px;
+    background-color: #1a1a1a;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+  .download span {
+    display: block;
+    margin: 0 auto;
+    width: 222px;
+    height: 60px;
+    background-image: url(../img/download-now.svg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+  .download span:before {
+    content: "";
+    background-image: url(../img/apple.svg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 19px;
+    height: 17px;
   }
   .footer__nav {
     width: 620px;
