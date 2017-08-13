@@ -1,0 +1,198 @@
+// mobile first layout
+.content {
+  height: 355px;
+  position: absolute;
+  top: 45%;
+  left: 0;
+  right: 0;
+  margin-top: -175px;
+}
+
+.logo {
+  display: block;
+  //margin: 141px auto 0;
+  margin: 0 auto;
+}
+
+.logo,
+.logo__img {
+  width: 158px;
+  height: 111px;
+}
+
+.logo__img {
+  outline: none !important;
+  .bounce();
+}
+
+.drops {
+  margin: 0 auto;
+  color: #000;
+  padding-top: 0;
+  font-size: 46px;
+  text-align: center;
+  font-weight: 600;
+
+  .animated(70px, 600ms);
+}
+
+.slogan {
+  color: #000;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 38px auto 0;
+  text-align: center;
+
+  .animated(70px, 600ms);
+}
+
+.download {
+  background-image: url(../img/download-mobile.png);
+  width: 179px;
+  height: 53px;
+  background-size: 179px 53px;
+  display: block;
+  margin: 55px auto 0;
+  text-indent: -999px;
+  overflow: hidden;
+
+  .animated(70px, 600ms);
+  .image-2x('../img/download@2x.png', 179px, 53px);
+  .image-3x('../img/download@3x.png', 179px, 53px);
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  height: 39px;
+}
+
+.footer__nav {
+  width: 100%;
+
+  .animated(40px, 600ms)
+}
+
+.footer__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__li {
+  padding: 0 5px;
+
+  &:first-child { padding-left: 10px; }
+  &:last-child { padding-right: 10px; }
+}
+
+.footer__link {
+  text-align: center;
+  display: block;
+  white-space: nowrap;
+  line-height: 39px;
+  color: #000;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+// tablet layout
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+  .content {
+    height: 480px;
+    margin-top: -240px;
+  }
+  .logo,
+  .logo__img {
+    width: 214px;
+    height: 151px;
+  }
+
+  .drops {
+    font-size: 62px;
+  }
+
+  .slogan {
+    font-size: 33px;
+  }
+  
+  .download {
+    background-image: url("../img/download-tablet.png");
+    width: 251px;
+    height: 75px;
+    background-size: 251px 75px;
+    margin-top: 80px;
+  }
+
+
+  .footer { height: 64px; }
+  .footer__link {
+    line-height: 64px;
+    font-size: 18px;
+  }
+
+  .footer__nav {
+    width: 500px;
+    margin: 0 auto;
+  }
+}
+
+// desktop layout
+@media screen and (min-width: 1280px) {
+  .content {
+    height: 252px;
+    margin-top: -125px;
+  }
+
+  .desktop-wrapper {
+    width: 448px;
+    margin: 0 auto;
+  }
+  .logo {
+    margin-top: 0;
+    float: left;
+  }
+  .logo,
+  .logo__img {
+    width: 187px;
+    height: 132px;
+  }
+
+  .drops {
+    float: right;
+    font-size: 93px;
+    line-height: 80px;
+  }
+
+  .slogan {
+    float: right;
+    margin-top: 18px;
+    font-size: 32px;
+  }
+
+  .download {
+    background-image: url(../img/download-dekstop.png);
+    width: 235px;
+    height: 70px;
+    background-size: 235px 70px;
+    margin-top: 40px;
+  }
+
+  .footer__nav {
+    width: 620px;
+    margin: 0 auto;
+  }
+
+  .footer { height: 44px; }
+  .footer__link {
+    line-height: 44px;
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,150 @@
+.inner {
+  padding: 105px 33px 20px 31px;
+
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-repeat: no-repeat;
+  }
+
+  &.inner_rules:after {
+    background-image: url(../img/rules.png);
+    width: 103px;
+    height: 123px;
+    right: 13px;
+    top: 14px;
+
+    .image-2x('../img/rules@2x.png', 103px, 123px);
+    .image-3x('../img/rules@3x.png', 103px, 123px);
+  }
+
+  &.inner_terms:after {
+    background-image: url(../img/terms-mobile.png);
+    width: 130px;
+    height: 115px;
+    right: 69px;
+    top: 48px;
+
+    .image-2x('../img/terms@2x.png', 130px, 115px);
+    .image-3x('../img/terms@3x.png', 130px, 115px);
+  }
+
+  &.inner_privacy:after {
+    background-image: url(../img/privacy-mobile.png);
+    width: 159px;
+    height: 165px;
+    right: 32px;
+    top: 23px;
+
+    .image-2x('../img/privacy@2x.png', 159px, 165px);
+    .image-3x('../img/privacy@3x.png', 159px, 165px);
+  }
+
+  &.inner_community:after {
+    background-image: url(../img/community@2x.png);
+    width: 216px;
+    height: 141px;
+    background-size: 216px 141px;
+    right: 10px;
+    top: 22px;
+
+    .image-2x('../img/community@2x.png', 216px, 141px);
+    .image-3x('../img/community@3x.png', 216px, 141px);
+  }
+}
+
+.inner__title {
+  color: #000000;
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0 0 26px;
+}
+
+.inner__subtitle {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 19px 0 0;
+}
+
+.inner__text {
+  font-size: 14px;
+  margin: 18px 0 0;
+}
+
+// tablet layout
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+  .inner {
+    width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    padding: 114px 0 0;
+
+    &.inner_rules:after {
+      top: 53px;
+      right: 0;
+    }
+
+    &.inner_terms:after {
+      top: 57px;
+      left: 145px;
+      right: auto;
+    }
+
+    &.inner_privacy:after {
+      background-image: url(../img/privacy-tablet.png);
+      background-size: 147px 153px;
+      width: 147px;
+      height: 153px;
+      right: 0;
+      top: 45px;
+    }
+
+    &.inner_community:after {
+      right: 7px;
+      top: 63px;
+    }
+  }
+}
+
+// desktop layout
+@media screen and (min-width: 1280px) {
+
+  .inner {
+    width: 600px;
+    padding: 49px 0 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+
+    &.inner_rules:after {
+      top: 21px;
+      right: 0;
+    }
+
+    &.inner_terms:after {
+      background-image: url(../img/terms-desktop.png);
+      width: 123px;
+      height: 109px;
+      background-size: 123px 109px;
+      right: 7px;
+      top: 50px;
+    }
+
+    &.inner_privacy:after {
+      background-image: url(../img/privacy-desktop.png);
+      width: 105px;
+      height: 109px;
+      background-size: 105px 109px;
+      right: 0;
+      top: 18px;
+    }
+
+    &.inner_community:after {
+      right: 8px;
+      top: 19px;
+    }
+  }
+}
