@@ -469,6 +469,8 @@ body.inner-page {
 }
 .nav__li {
   padding: 0 10px;
+  z-index: 2;
+  position: relative;
 }
 .nav__li:first-child {
   padding-left: 10px;
@@ -477,7 +479,7 @@ body.inner-page {
   padding-right: 10px;
 }
 .nav__li.nav__li_has-dropdown {
-  position: relative;
+  z-index: 1;
 }
 .nav__li.nav__li_has-dropdown:hover .nav__dropdown {
   visibility: visible;
@@ -485,7 +487,7 @@ body.inner-page {
   transform: translateY(0px);
 }
 .nav__li:hover .nav__link {
-  opacity: 1;
+  opacity: 1 !important;
 }
 .nav__link {
   text-align: center;
@@ -498,9 +500,16 @@ body.inner-page {
   font-size: 20px;
   font-weight: 600;
   opacity: 0.5;
+  transition: opacity 0.2s ease-in;
 }
 .nav__link.nav__link_active {
   opacity: 1;
+}
+.home-page .nav .nav__link {
+  opacity: 1;
+}
+.home-page .nav.nav_hovered .nav__link {
+  opacity: 0.5;
 }
 .nav__dropdown {
   position: absolute;
@@ -566,8 +575,11 @@ body.inner-page {
   display: block;
   margin: 0 auto;
   width: 375px;
-  height: 687px;
-  position: relative;
+  height: 375px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
 }
 .logo__img {
   outline: none !important;
@@ -578,6 +590,27 @@ body.inner-page {
   top: 0;
   right: 0;
   bottom: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0;
+}
+.logo__img.logo__img_active {
+  opacity: 1;
+}
+.logo__img.logo__img_1 {
+  background-image: url(../img/gif/1.png);
+}
+.logo__img.logo__img_2 {
+  background-image: url(../img/gif/2.png);
+}
+.logo__img.logo__img_3 {
+  background-image: url(../img/gif/3.png);
+}
+.logo__img.logo__img_4 {
+  background-image: url(../img/gif/4.png);
+}
+.logo__img.logo__img_5 {
+  background-image: url(../img/gif/5.png);
 }
 .download {
   width: 100%;
@@ -620,7 +653,7 @@ body.inner-page {
   top: 0;
   right: 0;
   bottom: 0;
-  background-image: url(../img/bg-pattern.png);
+  background-image: url(../img/bg-pattern@2x.png);
   background-repeat: repeat;
   z-index: -1;
 }
@@ -643,6 +676,12 @@ body.inner-page {
   color: #000;
 }
 @media screen and (max-width: 768px) {
+  .home-page {
+    padding-top: 550px;
+  }
+  .logo {
+    max-width: 320px;
+  }
   .download {
     position: relative;
     display: block;

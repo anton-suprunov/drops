@@ -6,8 +6,11 @@
   display: block;
   margin: 0 auto;
   width: 375px;
-  height: 687px;
-  position: relative;
+  height: 375px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%)
 }
 
 .logo__img {
@@ -19,7 +22,29 @@
   top: 0;
   right: 0;
   bottom: 0;
-  //.bounce();
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0;
+
+  &.logo__img_active {
+    opacity: 1;
+  }
+
+  &.logo__img_1 {
+    background-image: url(../img/gif/1.png);
+  }
+  &.logo__img_2 {
+    background-image: url(../img/gif/2.png);
+  }
+  &.logo__img_3 {
+    background-image: url(../img/gif/3.png);
+  }
+  &.logo__img_4 {
+    background-image: url(../img/gif/4.png);
+  }
+  &.logo__img_5 {
+    background-image: url(../img/gif/5.png);
+  }
 }
 
 .download {
@@ -61,7 +86,7 @@
   top: 0;
   right: 0;
   bottom: 0;
-  background-image: url(../img/bg-pattern.png);
+  background-image: url(../img/bg-pattern@2x.png);
   background-repeat: repeat;
   z-index: -1;
 }
@@ -92,6 +117,14 @@
 
 // mobile layout
 @media screen and (max-width: 768px) {
+  .home-page {
+    padding-top: 550px
+  }
+
+  .logo {
+    max-width: 320px;
+  }
+
   .download {
     position: relative;
     display: block;
