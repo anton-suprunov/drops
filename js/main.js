@@ -8,7 +8,7 @@ function main() {
     }
 
     //setTimeout(function() {
-    animate('.nav');
+    animate('.home-page .nav');
     setTimeout(function() {
       //animate('.slogan');
       //setTimeout(function() {
