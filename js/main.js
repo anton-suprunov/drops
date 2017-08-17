@@ -16,6 +16,7 @@ function main() {
       }
       
       addClass(logos[i], 'logo__img_active');
+
       if (i === (logos.length - 1)) {
         i = 0;
       } else {
@@ -42,10 +43,10 @@ function main() {
   twemoji.parse(document.body);
 
   if (window.innerWidth < 768) {
-    document.querySelector('.nav__li_has-dropdown')
+    document.querySelector('.nav__li_has-dropdown .nav__link')
       .addEventListener('click', function(e) {
         e.preventDefault();
-        var el = e.currentTarget;
+        var el = e.currentTarget.parentNode;
         if (hasClass(el, 'nav__li_has-dropdown_active')) {
           removeClass(el, 'nav__li_has-dropdown_active');
         } else {
