@@ -2,16 +2,12 @@ function main() {
   var logo = document.querySelector('.logo__img'),
     nav = document.querySelector('.nav'),
     body = document.querySelector('body'),
-    isHome = false;
-
-  if (hasClass(body, 'home-page')) {
-    isHome = true;
-  }
-
+    isHome = hasClass(body, 'home-page');
+  
   if (isHome) {
     var logos = document.querySelectorAll('.logo__img'),
       i = 1;
-    console.log(logos);
+
     setInterval(function() {
       if (i === 0) {
         removeClass(logos[logos.length - 1], 'logo__img_active');
@@ -35,19 +31,28 @@ function main() {
     }, 120);
   }, 0);
 
-  nav.addEventListener('mouseover', function() {
-    if (nav.className.indexOf('nav_hovered') === -1) {
-      nav.className = nav.className + ' ' + 'nav_hovered';
-    } 
-  })
+  nav.addEventListener('mouseenter', function() {
+      addClass(nav, 'nav_hovered');
+  });
 
-  // Set the size of the rendered Emojis
-  // This can be set to 16x16, 36x36, or 72x72
-  twemoji.size = '36x36';
+  nav.addEventListener('mouseleave', function() {
+      removeClass(nav, 'nav_hovered');
+  });
 
-  // Parse the document body and
-  // insert <img> tags in place of Unicode Emojis
   twemoji.parse(document.body);
+
+  if (window.innerWidth < 768) {
+    document.querySelector('.nav__li_has-dropdown')
+      .addEventListener('click', function(e) {
+        e.preventDefault();
+        var el = e.currentTarget;
+        if (hasClass(el, 'nav__li_has-dropdown_active')) {
+          removeClass(el, 'nav__li_has-dropdown_active');
+        } else {
+          addClass(el, 'nav__li_has-dropdown_active');
+        }
+      });
+  }
 }
 
 function animate(selector) {
