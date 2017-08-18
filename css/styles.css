@@ -450,15 +450,6 @@ body.inner-page {
   right: 30px;
   z-index: 1;
 }
-.home-page .nav {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 600ms ease;
-}
-.home-page .nav.animated_in {
-  transform: translateY(0);
-  opacity: 1;
-}
 .nav__list {
   list-style: none;
   padding: 0;
@@ -694,12 +685,13 @@ body.inner-page {
 }
 @media screen and (max-width: 768px) {
   .home-page .content {
-    padding-top: 600px;
+    padding-top: 450px;
     margin-top: 0;
   }
   .logo {
-    top: 52%;
+    top: 40px;
     max-width: 320px;
+    transform: translate(-50%, 0);
   }
   .download {
     position: relative;

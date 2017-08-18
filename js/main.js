@@ -26,7 +26,7 @@ function main() {
   }
 
   setTimeout(function() {
-    animate('.home-page .nav');
+    //animate('.home-page .nav');
     setTimeout(function() {
       animate('.download');
     }, 120);
