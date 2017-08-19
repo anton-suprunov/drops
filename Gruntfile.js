@@ -33,10 +33,24 @@ module.exports = function(grunt) {
       }
     },
 
+    postcss: {
+      options: {
+        map: false, // inline sourcemaps
+        processors: [
+          require('autoprefixer')({
+            browsers: ['last 2 versions', '> 1%', 'ie 9', 'Firefox ESR']
+          }),
+        ]
+      },
+      dist: {
+        src: 'css/*.css'
+      }
+    },
+
     watch: {
       less: {
         files: ['css/*.less'],
-        tasks: ['less'],
+        tasks: ['less', 'postcss'],
         options: {
           spawn: false,
         }
@@ -48,6 +62,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['build']);
   grunt.registerTask('build', [
     'less',
+    'postcss',
     'browserSync',
     'watch'
   ]);

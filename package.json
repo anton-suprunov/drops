@@ -14,9 +14,11 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/anton_suprunov/drops-website#readme",
   "devDependencies": {
+    "autoprefixer": "^7.1.2",
     "grunt": "^1.0.1",
     "grunt-contrib-less": "^1.4.1",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-postcss": "^0.8.0",
     "load-grunt-tasks": "^3.5.2",
     "time-grunt": "^1.4.0"
   },
